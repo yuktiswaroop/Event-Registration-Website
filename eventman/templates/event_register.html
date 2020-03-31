@@ -1,0 +1,5 @@
+{% extends 'event.html' %}
+
+{% block content %}
+	<button onclick="window.location.href = '{% url 'event_register' eve.id %}';">Register for Event</button>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+	<title></title>
+</head>
+<body>
+		<h1> Event Details : </h1><br>
+
+		<h4> Event name : {{eve.name}} </h4>
+		<h4> Event date : {{eve.date}} </h4>
+		<h4> Event public : {{eve.public}} </h4>
+		<h4> Event limit of guests : {{eve.limit_of_guests}} </h4>
+		<h4> Event host : {{eve.creator}} </h4>
+
+		<h4>List of invitees:</h4>
+		{% for a in i%}
+			<p>{{ a.name }}</p>
+		{% endfor %}
+		<br>
+		{% block content %}
+		<button onclick="window.location.href = '{% url 'event_delete' eve.id %}';">Delete Event</button>
+		{% endblock %}
+</body>
+</html>
+
+
+
+

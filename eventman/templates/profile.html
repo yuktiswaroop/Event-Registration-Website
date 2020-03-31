@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+{% block head %}
+	<h1 style="margin-top: 40px;">Hey there {{u}} !</h1><br>
+{% endblock %}
+
+
+{% block content %}
+
+<div id="mySidenav" class="sidenav">
+  <a href="{% url 'create_event' %}" id="about">Add Event</a>
+  <a href="{% url 'logout' %}" id="blog">Log out</a>
+</div>
+
+<div>
+	
+	<h1>INVITATIONS:</h1>
+	{% if i != 'none' %}
+	{% for a in i%}
+		<a href="{% url 'event_detail' a.id %}">{{ a.name }}</a><br>
+	{% endfor %}
+
+	{% else %}
+	<p>None</p>
+	{% endif %}
+
+		<br>
+
+	<h1>YOUR EVENTS:</h1>
+				{% for j in ob %}
+		  			<a href="{% url 'event' j.id %}">{{j.name}}</a><br>   
+		    	{% endfor %}  
+</div>
+   
+{% endblock %}
+
+
